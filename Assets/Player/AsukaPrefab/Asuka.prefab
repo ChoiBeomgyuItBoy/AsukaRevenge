@@ -2325,6 +2325,7 @@ GameObject:
   - component: {fileID: 5455068210073342585}
   - component: {fileID: 3530877133030185973}
   - component: {fileID: 2847056547094458395}
+  - component: {fileID: 3119744543893574347}
   - component: {fileID: 1183043849023792081}
   m_Layer: 0
   m_Name: Asuka
@@ -2629,6 +2630,7 @@ MonoBehaviour:
   <Controller>k__BackingField: {fileID: 1183043849023792081}
   <Animator>k__BackingField: {fileID: 5455068210073342585}
   <Targeter>k__BackingField: {fileID: 5819835702939183228}
+  <ForceReceiver>k__BackingField: {fileID: 3119744543893574347}
   <FreeLookMovementSpeed>k__BackingField: 4
   <RotationDamping>k__BackingField: 10
 --- !u!114 &2847056547094458395
@@ -2643,6 +2645,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc610a1e249ee8243a91153cd73da197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3119744543893574347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3346706660141920299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba61b470ca03f84bb5214a032b23fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1183043849023792081}
 --- !u!143 &1183043849023792081
 CharacterController:
   m_ObjectHideFlags: 0
@@ -8464,6 +8479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b39e5f6563294c45b31a73203be4598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cinemachineTargetGroup: {fileID: 0}
 --- !u!135 &5728925062379884585
 SphereCollider:
   m_ObjectHideFlags: 0
