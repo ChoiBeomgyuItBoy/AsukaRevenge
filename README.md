@@ -23,7 +23,7 @@
   - 3rd Person Camera controller
   - Animations / State Machines From Scratch
   - Targetting Enemies system
-  - Character Controller Force - Applying System
+  - Character Controller - Force Applying System
   - Combo Attacks
   - Enemy AI, Attack & Move
   - Health and Damage System
