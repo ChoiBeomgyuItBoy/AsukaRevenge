@@ -2658,24 +2658,29 @@ MonoBehaviour:
     <ComboAttackTime>k__BackingField: 0.4
     <ForceTime>k__BackingField: 0.2
     <Force>k__BackingField: 15
+    <Damage>k__BackingField: 10
   - <AnimationName>k__BackingField: Combo_2
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0.4
     <ForceTime>k__BackingField: 0.2
     <Force>k__BackingField: 15
+    <Damage>k__BackingField: 13
   - <AnimationName>k__BackingField: Combo_3
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 3
     <ComboAttackTime>k__BackingField: 0.6
     <ForceTime>k__BackingField: 0.2
     <Force>k__BackingField: 15
+    <Damage>k__BackingField: 16
   - <AnimationName>k__BackingField: Combo_4
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: -1
     <ComboAttackTime>k__BackingField: 0
     <ForceTime>k__BackingField: 0.2
     <Force>k__BackingField: 20
+    <Damage>k__BackingField: 20
+  <Weapon>k__BackingField: {fileID: 4274177678661462895}
   <FreeLookMovementSpeed>k__BackingField: 4
   <TargetingMovementSpeed>k__BackingField: 3
   <RotationDamping>k__BackingField: 10
