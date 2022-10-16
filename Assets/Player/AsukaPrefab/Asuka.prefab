@@ -1776,11 +1776,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2682919021939459273}
   m_LocalRotation: {x: 0.6830127, y: 0.18301274, z: -0.18301274, w: 0.6830127}
-  m_LocalPosition: {x: 0.04, y: -0.026000023, z: -0.030999998}
-  m_LocalScale: {x: 0.18, y: 0.19999999, z: 0.1}
+  m_LocalPosition: {x: 0.039999932, y: -0.026000023, z: -0.031002643}
+  m_LocalScale: {x: 0.18, y: 0.19999997, z: 0.10000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7163240353597950928}
+  m_Father: {fileID: 2454042075748473125}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 30, z: 0}
 --- !u!33 &2379445565520615726
@@ -2322,11 +2322,13 @@ GameObject:
   - component: {fileID: 7288764700045597429}
   - component: {fileID: 6977551791708978479}
   - component: {fileID: 6148454174228122561}
+  - component: {fileID: 1183043849023792081}
   - component: {fileID: 5455068210073342585}
   - component: {fileID: 3530877133030185973}
   - component: {fileID: 2847056547094458395}
   - component: {fileID: 3119744543893574347}
-  - component: {fileID: 1183043849023792081}
+  - component: {fileID: 4004876229455579641}
+  - component: {fileID: 7249064993361036993}
   m_Layer: 0
   m_Name: Asuka
   m_TagString: Player
@@ -2594,6 +2596,24 @@ MonoBehaviour:
       m_RotationOrder: 4
     CurveXRangeDegree: 90
     CurveYRangeDegree: 10
+--- !u!143 &1183043849023792081
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3346706660141920299}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1.5
+  m_Radius: 0.3
+  m_SlopeLimit: 30
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.03
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 0.75, z: 0}
 --- !u!95 &5455068210073342585
 Animator:
   serializedVersion: 4
@@ -2633,9 +2653,29 @@ MonoBehaviour:
   <ForceReceiver>k__BackingField: {fileID: 3119744543893574347}
   <Attacks>k__BackingField:
   - <AnimationName>k__BackingField: Combo_1
+    <TransitionDuration>k__BackingField: 0.1
+    <ComboStateIndex>k__BackingField: 1
+    <ComboAttackTime>k__BackingField: 0.4
+    <ForceTime>k__BackingField: 0.2
+    <Force>k__BackingField: 15
   - <AnimationName>k__BackingField: Combo_2
+    <TransitionDuration>k__BackingField: 0.1
+    <ComboStateIndex>k__BackingField: 2
+    <ComboAttackTime>k__BackingField: 0.4
+    <ForceTime>k__BackingField: 0.2
+    <Force>k__BackingField: 15
   - <AnimationName>k__BackingField: Combo_3
+    <TransitionDuration>k__BackingField: 0.1
+    <ComboStateIndex>k__BackingField: 3
+    <ComboAttackTime>k__BackingField: 0.6
+    <ForceTime>k__BackingField: 0.2
+    <Force>k__BackingField: 15
   - <AnimationName>k__BackingField: Combo_4
+    <TransitionDuration>k__BackingField: 0.1
+    <ComboStateIndex>k__BackingField: -1
+    <ComboAttackTime>k__BackingField: 0
+    <ForceTime>k__BackingField: 0.2
+    <Force>k__BackingField: 20
   <FreeLookMovementSpeed>k__BackingField: 4
   <TargetingMovementSpeed>k__BackingField: 3
   <RotationDamping>k__BackingField: 10
@@ -2664,24 +2704,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1183043849023792081}
---- !u!143 &1183043849023792081
-CharacterController:
+  drag: 0.3
+--- !u!114 &4004876229455579641
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3346706660141920299}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1.5
-  m_Radius: 0.3
-  m_SlopeLimit: 30
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.03
-  m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0.75, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ab737da0faf73648b1a7218c98d85d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponLogic: {fileID: 5249958898547180414}
+--- !u!114 &7249064993361036993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3346706660141920299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9728f44b9618f4fad42d61449d75df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &3347232105670867726
 GameObject:
   m_ObjectHideFlags: 0
@@ -5235,13 +5284,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7163240353597950928}
+  - component: {fileID: 6958987321015404337}
+  - component: {fileID: 4274177678661462895}
+  - component: {fileID: 1527759244510438196}
   m_Layer: 0
-  m_Name: Weapon
+  m_Name: WeaponLogic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7163240353597950928
 Transform:
   m_ObjectHideFlags: 0
@@ -5249,15 +5301,57 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5249958898547180414}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.2588191, z: 0, w: 0.9659258}
+  m_LocalPosition: {x: 0.3, y: 0, z: 0.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6894096357194279304}
+  m_Children: []
   m_Father: {fileID: 2454042075748473125}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
+--- !u!136 &6958987321015404337
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5249958898547180414}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 1.4
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4274177678661462895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5249958898547180414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeaad29c4ee412d4a8f617e2c1369e19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCollider: {fileID: 1183043849023792081}
+--- !u!54 &1527759244510438196
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5249958898547180414}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.5
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5275812329316054705
 GameObject:
   m_ObjectHideFlags: 0
@@ -8103,6 +8197,7 @@ Transform:
   - {fileID: 2002676306838094932}
   - {fileID: 3333991880146694190}
   - {fileID: 5949940598490198877}
+  - {fileID: 6894096357194279304}
   - {fileID: 7163240353597950928}
   m_Father: {fileID: 9079990942263288973}
   m_RootOrder: -1

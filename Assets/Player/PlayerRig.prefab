@@ -1214,7 +1214,7 @@ PrefabInstance:
     - target: {fileID: 3530877133030185973, guid: e18ee717d892f32418b28e9db925454c,
         type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[0].<ComboAttackTime>k__BackingField
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3530877133030185973, guid: e18ee717d892f32418b28e9db925454c,
         type: 3}
@@ -1224,7 +1224,7 @@ PrefabInstance:
     - target: {fileID: 3530877133030185973, guid: e18ee717d892f32418b28e9db925454c,
         type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[1].<ComboAttackTime>k__BackingField
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3530877133030185973, guid: e18ee717d892f32418b28e9db925454c,
         type: 3}
