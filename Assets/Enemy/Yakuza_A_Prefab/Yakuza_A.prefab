@@ -231,9 +231,10 @@ GameObject:
   - component: {fileID: 4487841913094314352}
   - component: {fileID: 6310008295598815057}
   - component: {fileID: 2238636141547367391}
+  - component: {fileID: 2993194687811000242}
   - component: {fileID: 6066459746477559186}
   - component: {fileID: 1003756301492926206}
-  - component: {fileID: 2993194687811000242}
+  - component: {fileID: 5950305730684632360}
   m_Layer: 0
   m_Name: Yakuza_A
   m_TagString: Untagged
@@ -537,6 +538,22 @@ CharacterController:
   m_SkinWidth: 0.03
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &2993194687811000242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580842105512325162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71ce81cb3001eb64598d76f034f92234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Animator>k__BackingField: {fileID: 6310008295598815057}
+  <Controller>k__BackingField: {fileID: 2238636141547367391}
+  <ForceReceiver>k__BackingField: {fileID: 5950305730684632360}
+  <PlayerChasingRange>k__BackingField: 10
 --- !u!114 &6066459746477559186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,7 +579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
---- !u!114 &2993194687811000242
+--- !u!114 &5950305730684632360
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -571,10 +588,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 580842105512325162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71ce81cb3001eb64598d76f034f92234, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ba61b470ca03f84bb5214a032b23fae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Animator>k__BackingField: {fileID: 6310008295598815057}
+  controller: {fileID: 2238636141547367391}
+  drag: 0.3
 --- !u!1 &655794707137317615
 GameObject:
   m_ObjectHideFlags: 0

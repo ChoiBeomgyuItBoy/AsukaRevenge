@@ -33,11 +33,11 @@ public class PlayerFreeLookState : PlayerBaseState
 
         if (stateMachine.InputReader.MovementValue == Vector2.zero)
         {
-            stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0f, AnimatorDampTime, Time.deltaTime);
+            stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0f, AnimatorDampTime, deltaTime);
             return;
         }
 
-        stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1f, AnimatorDampTime, Time.deltaTime);
+        stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1f, AnimatorDampTime, deltaTime);
         FaceMovementDirection(movement, deltaTime);
     }
 
