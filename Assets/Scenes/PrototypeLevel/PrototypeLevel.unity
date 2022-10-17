@@ -6666,25 +6666,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1757848264, guid: 65c5a23d51437f84c9121b3f3e2a014f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000000846514
+      value: 0.000000008465141
       objectReference: {fileID: 0}
     - target: {fileID: 1757848264, guid: 65c5a23d51437f84c9121b3f3e2a014f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000015350214
+      value: -0.0000000015350216
       objectReference: {fileID: 0}
     - target: {fileID: 1951158719, guid: 65c5a23d51437f84c9121b3f3e2a014f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.00000006882552
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302661602743505474, guid: 65c5a23d51437f84c9121b3f3e2a014f,
-        type: 3}
-      propertyPath: <Attacks>k__BackingField.Array.data[2].<TransitionDuration>k__BackingField
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302661602743505474, guid: 65c5a23d51437f84c9121b3f3e2a014f,
-        type: 3}
-      propertyPath: <Attacks>k__BackingField.Array.data[3].<TransitionDuration>k__BackingField
-      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6897564800715626560, guid: 65c5a23d51437f84c9121b3f3e2a014f,
         type: 3}
@@ -7255,6 +7245,7 @@ GameObject:
   - component: {fileID: 603464237}
   - component: {fileID: 603464236}
   - component: {fileID: 603464239}
+  - component: {fileID: 603464240}
   m_Layer: 0
   m_Name: EnemieCube
   m_TagString: Untagged
@@ -7352,6 +7343,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 917c62af08f2eaf4eb601225d4706fc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &603464240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603464234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9728f44b9618f4fad42d61449d75df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &694868936
 GameObject:
   m_ObjectHideFlags: 0
@@ -15235,6 +15239,7 @@ GameObject:
   - component: {fileID: 1706254197}
   - component: {fileID: 1706254196}
   - component: {fileID: 1706254199}
+  - component: {fileID: 1706254200}
   m_Layer: 0
   m_Name: EnemieSphere
   m_TagString: Untagged
@@ -15332,6 +15337,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 917c62af08f2eaf4eb601225d4706fc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1706254200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706254194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9728f44b9618f4fad42d61449d75df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &1749943285
 GameObject:
   m_ObjectHideFlags: 0
