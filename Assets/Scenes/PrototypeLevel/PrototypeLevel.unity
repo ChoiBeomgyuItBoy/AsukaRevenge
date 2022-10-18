@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: b34a23ba4f8de2f418b1624087e3b969, type: 2}
 --- !u!43 &16923834
 Mesh:
   m_ObjectHideFlags: 0
@@ -6745,15 +6745,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1757848264, guid: 65c5a23d51437f84c9121b3f3e2a014f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000000846514
+      value: -0.00000000846514
       objectReference: {fileID: 0}
     - target: {fileID: 1757848264, guid: 65c5a23d51437f84c9121b3f3e2a014f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000015350204
+      value: 0.0000000015350204
       objectReference: {fileID: 0}
     - target: {fileID: 1951158719, guid: 65c5a23d51437f84c9121b3f3e2a014f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.000000068825514
+      value: 0.000000068825514
       objectReference: {fileID: 0}
     - target: {fileID: 1951158719, guid: 65c5a23d51437f84c9121b3f3e2a014f, type: 3}
       propertyPath: m_LocalPosition.y
