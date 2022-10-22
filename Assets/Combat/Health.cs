@@ -13,6 +13,8 @@ public class Health : MonoBehaviour
 
     public event Action OnTakeDamage;
     public event Action OnDie;
+    
+    public bool IsDead => health == 0;
 
     private void Start()
     {

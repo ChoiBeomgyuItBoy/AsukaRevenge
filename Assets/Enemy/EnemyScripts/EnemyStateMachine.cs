@@ -21,7 +21,7 @@ public class EnemyStateMachine : StateMachine
    [field: SerializeField] public int AttackDamage { get; private set; }
    [field: SerializeField] public float AttacKnockback { get; private set; }
 
-   public GameObject Player { get; private set; }
+   public Health Player { get; private set; }
 
    private void OnEnable()
    {
@@ -31,7 +31,7 @@ public class EnemyStateMachine : StateMachine
 
    private void Start()
    {
-      Player = GameObject.FindGameObjectWithTag("Player");
+      Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
 
       Agent.updatePosition = false;
       Agent.updateRotation = false;

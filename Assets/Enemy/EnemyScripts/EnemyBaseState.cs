@@ -33,6 +33,8 @@ public abstract class EnemyBaseState : State
 
     protected bool IsInChaseRange()
     {
+        if(stateMachine.Player.IsDead) { return false; }
+        
         Vector3 playerPosition = stateMachine.Player.transform.position;
         Vector3 myPosition = stateMachine.transform.position;
 
