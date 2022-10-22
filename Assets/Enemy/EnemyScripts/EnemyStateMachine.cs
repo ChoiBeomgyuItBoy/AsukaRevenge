@@ -12,6 +12,8 @@ public class EnemyStateMachine : StateMachine
    [field: SerializeField] public NavMeshAgent Agent { get; private set; }
    [field: SerializeField] public WeaponDamage Weapon { get; private set; }
    [field: SerializeField] public Health Health { get; private set; }
+   [field: SerializeField] public Target Target { get; private set; }
+   [field: SerializeField] public Ragdoll Ragdoll { get; private set; }
 
    [field: SerializeField] public float MovingSpeed { get; private set; }
    [field: SerializeField] public float PlayerChasingRange { get; private set; }
@@ -23,7 +25,8 @@ public class EnemyStateMachine : StateMachine
 
    private void OnEnable()
    {
-      Health.OnTakeDamage += HandleTakeDamage;
+      Health.OnTakeDamage += OnTakeDamage;
+      Health.OnDie += OnDie;
    }
 
    private void Start()
@@ -43,13 +46,19 @@ public class EnemyStateMachine : StateMachine
       Gizmos.DrawWireSphere(transform.position, PlayerChasingRange);
    }
 
-   private void HandleTakeDamage()
-    {
-        SwitchState(new EnemyImpactState(this));
-    }
+   private void OnTakeDamage()
+   {
+      SwitchState(new EnemyImpactState(this));
+   }
+
+   private void OnDie()
+   {
+      SwitchState(new EnemyDeadState(this));
+   }
 
    private void OnDisable()
    {
-      Health.OnTakeDamage -= HandleTakeDamage;
+      Health.OnTakeDamage -= OnTakeDamage;
+      Health.OnDie -= OnDie;
    }
 }

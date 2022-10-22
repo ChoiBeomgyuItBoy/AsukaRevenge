@@ -8,8 +8,11 @@ public class Health : MonoBehaviour
     [SerializeField] private int maxHealth = 100;
 
     private int health;
+    
+    private bool isInvulnerable;
 
     public event Action OnTakeDamage;
+    public event Action OnDie;
 
     private void Start()
     {
@@ -20,10 +23,19 @@ public class Health : MonoBehaviour
     {
         if(health == 0) { return; }
 
+        if(isInvulnerable) { return; }
+
         OnTakeDamage?.Invoke();
 
         health = Mathf.Max(health - damage, 0);
 
+        if(health == 0) { OnDie?.Invoke(); }
+
         Debug.Log(health);
+    }
+
+    public void SetInvulnerable(bool isInvulnerable)
+    {
+        this.isInvulnerable = isInvulnerable;
     }
 }

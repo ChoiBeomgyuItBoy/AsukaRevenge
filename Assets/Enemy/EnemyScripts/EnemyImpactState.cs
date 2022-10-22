@@ -20,6 +20,8 @@ public class EnemyImpactState : EnemyBaseState
     {
         Move(deltaTime);
 
+        FacePlayer();
+
         duration -= deltaTime;
 
         if(duration <= 0f)

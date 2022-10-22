@@ -12,6 +12,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public Attack[] Attacks { get; private set; }
     [field: SerializeField] public WeaponDamage Weapon { get; private set; }
     [field: SerializeField] public Health Health { get; private set; }    
+    [field: SerializeField] public Ragdoll Ragdoll { get; private set; } 
 
     [field: SerializeField] public float FreeLookMovementSpeed { get; private set; }
     [field: SerializeField] public float TargetingMovementSpeed { get; private set; }
@@ -22,6 +23,7 @@ public class PlayerStateMachine : StateMachine
      private void OnEnable()
      {
         Health.OnTakeDamage += OnTakeDamage;
+        Health.OnDie += OnDie;
      }
 
     private void Start()
@@ -36,8 +38,14 @@ public class PlayerStateMachine : StateMachine
         SwitchState(new PlayerImpactState(this));
     }
 
-     private void OnDisable()
-     {
+    private void OnDie()
+    {
+        SwitchState(new PlayerDeadState(this));
+    }
+
+    private void OnDisable()
+    {
         Health.OnTakeDamage -= OnTakeDamage;
-     }
+        Health.OnDie -= OnDie;
+    }
 }
