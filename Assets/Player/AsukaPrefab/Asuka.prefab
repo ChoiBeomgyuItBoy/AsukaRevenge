@@ -2800,7 +2800,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1.5
   m_Radius: 0.3
-  m_SlopeLimit: 30
+  m_SlopeLimit: 20
   m_StepOffset: 0.3
   m_SkinWidth: 0.03
   m_MinMoveDistance: 0
@@ -2881,6 +2881,10 @@ MonoBehaviour:
   <FreeLookMovementSpeed>k__BackingField: 4
   <TargetingMovementSpeed>k__BackingField: 3
   <RotationDamping>k__BackingField: 10
+  <DodgeDuration>k__BackingField: 0.1
+  <DodgeLength>k__BackingField: 0.75
+  <DodgeCooldown>k__BackingField: 1
+  <JumpForce>k__BackingField: 3
 --- !u!114 &2847056547094458395
 MonoBehaviour:
   m_ObjectHideFlags: 0
