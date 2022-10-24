@@ -2881,10 +2881,10 @@ MonoBehaviour:
   <FreeLookMovementSpeed>k__BackingField: 4
   <TargetingMovementSpeed>k__BackingField: 3
   <RotationDamping>k__BackingField: 10
-  <DodgeDuration>k__BackingField: 0.1
-  <DodgeLength>k__BackingField: 0.75
+  <DodgeDuration>k__BackingField: 0.4
+  <DodgeLength>k__BackingField: 2
   <DodgeCooldown>k__BackingField: 1
-  <JumpForce>k__BackingField: 3
+  <JumpForce>k__BackingField: 4
 --- !u!114 &2847056547094458395
 MonoBehaviour:
   m_ObjectHideFlags: 0

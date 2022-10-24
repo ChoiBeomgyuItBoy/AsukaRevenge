@@ -38,6 +38,11 @@ public class PlayerStateMachine : StateMachine
         SwitchState(new PlayerFreeLookState(this));
     }
 
+    public void SetDodgeTime(float dodgeTime)
+    {
+        PreviousDodgeTime = dodgeTime;
+    }
+
     private void OnTakeDamage()
     {
         SwitchState(new PlayerImpactState(this));
@@ -46,11 +51,6 @@ public class PlayerStateMachine : StateMachine
     private void OnDie()
     {
         SwitchState(new PlayerDeadState(this));
-    }
-
-    public void SetDodgeTime(float dodgeTime)
-    {
-        PreviousDodgeTime = dodgeTime;
     }
 
     private void OnDisable()

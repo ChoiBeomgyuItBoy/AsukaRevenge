@@ -8,7 +8,7 @@ public class PlayerJumpingState : PlayerBaseState
     private readonly int JumpHash = Animator.StringToHash("Jump");
 
     private Vector3 momentum;
-    private float CrossFadeDuration = 0.1f;
+    private float CrossFadeDuration = 0.2f;
 
     public PlayerJumpingState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
