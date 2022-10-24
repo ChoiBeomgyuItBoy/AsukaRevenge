@@ -21,6 +21,8 @@ public class PlayerBlockingState : PlayerBaseState
     {
         Move(deltaTime);
 
+        FaceTarget();
+
         if(!stateMachine.InputReader.IsBlocking)
         {
             stateMachine.SwitchState(new PlayerTargetingState(stateMachine));

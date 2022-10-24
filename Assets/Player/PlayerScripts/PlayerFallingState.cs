@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class PlayerFallingState : PlayerBaseState
 {
+    private float CrossFadeDuration = 0.4f;
+
     private readonly int FallHash = Animator.StringToHash("Fall");
 
     private Vector3 momentum;
-    private float CrossFadeDuration = 0.4f;
 
     public PlayerFallingState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
-    {
+    {  
+        stateMachine.LedgeDetector.OnLedgeDetect += OnLedgeDetect;
+
         momentum = stateMachine.Controller.velocity;
         momentum.y = 0f;
 
@@ -23,7 +26,7 @@ public class PlayerFallingState : PlayerBaseState
     {
         Move(momentum, deltaTime);
 
-        if(stateMachine.Controller.isGrounded)
+        if(stateMachine.Controller.velocity.y >= 0f && stateMachine.Controller.isGrounded)
         {
             ReturnToLocomotion();
         }
@@ -33,6 +36,11 @@ public class PlayerFallingState : PlayerBaseState
 
     public override void Exit()
     {
-        
+        stateMachine.LedgeDetector.OnLedgeDetect -= OnLedgeDetect;
+    }
+
+    private void OnLedgeDetect(Vector3 ledgeForward)
+    {
+        stateMachine.SwitchState(new PlayerHangingState(stateMachine, ledgeForward));
     }
 }

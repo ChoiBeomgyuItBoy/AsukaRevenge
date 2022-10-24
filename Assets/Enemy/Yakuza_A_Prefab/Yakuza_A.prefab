@@ -3270,6 +3270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCollider: {fileID: 2238636141547367391}
+  imAnEnemy: 1
 --- !u!54 &7775437926686061719
 Rigidbody:
   m_ObjectHideFlags: 0
