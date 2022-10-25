@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyAttackingState : EnemyBaseState
 {
-    private readonly int AttackHash = Animator.StringToHash("Enemy_Attack");
     private const float TransitionDuration = 0.1f;
+
+    private readonly int AttackHash = Animator.StringToHash("Enemy_Attack");
 
     public EnemyAttackingState(EnemyStateMachine stateMachine) : base(stateMachine) { }
 
@@ -18,16 +19,15 @@ public class EnemyAttackingState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
+        Move(deltaTime);
+
         FacePlayer();
 
-        if(GetNormalizedTime(stateMachine.Animator) >= 1)
+        if(GetNormalizedTime(stateMachine.Animator, "Attack") >= 1)
         {
             stateMachine.SwitchState(new EnemyChasingState(stateMachine));
         }
     }
 
-    public override void Exit()
-    {
-        
-    }
+    public override void Exit() { }
 }

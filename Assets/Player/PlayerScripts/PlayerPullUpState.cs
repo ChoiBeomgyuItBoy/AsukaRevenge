@@ -7,9 +7,6 @@ public class PlayerPullUpState : PlayerBaseState
     private const float CrossFadeDuration = 0.1f;
 
     private readonly int ClimbingHash = Animator.StringToHash("Climb");
-    private readonly Vector3 Offset = new Vector3(0f, 2.325f, 0.65f);
-
-    private float initialStateDelay = 0.2f;
 
     public PlayerPullUpState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
@@ -19,10 +16,8 @@ public class PlayerPullUpState : PlayerBaseState
     }
 
     public override void Tick(float deltaTime)
-    {  
-        if(initialStateDelay > 0f) { initialStateDelay -= deltaTime; return; }
-        
-        if(stateMachine.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+    {     
+        if(GetNormalizedTime(stateMachine.Animator, "Climb") < 1f)
         {
             Vector3 movement = new Vector3();
 
