@@ -6,9 +6,10 @@ public class PlayerFreeLookState : PlayerBaseState
 {
     private readonly int FreeLookBlendTreeHash = Animator.StringToHash("FreeLookBlendTree");
     private readonly int FreeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
+    private readonly int DodgeFrontHash = Animator.StringToHash("Dodge_Front");
 
     private const float AnimatorDampTime = 0.1f;
-    private const float CrossFadeDuration = 0.1f;
+    private const float CrossFadeDuration = 0.2f;
 
     public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
@@ -16,6 +17,7 @@ public class PlayerFreeLookState : PlayerBaseState
     {
         stateMachine.InputReader.TargetEvent += OnTarget;
         stateMachine.InputReader.JumpEvent += OnJump;
+        stateMachine.InputReader.DodgeEvent += OnDodge;
 
         stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash,CrossFadeDuration);
     }
@@ -46,7 +48,9 @@ public class PlayerFreeLookState : PlayerBaseState
     {
         stateMachine.InputReader.TargetEvent -= OnTarget;
         stateMachine.InputReader.JumpEvent -= OnJump;
+        stateMachine.InputReader.DodgeEvent -= OnDodge;
     }
+
     private Vector3 CalculateMovement()
     {
         Vector3 forward = stateMachine.MainCameraTransform.forward;
@@ -81,5 +85,18 @@ public class PlayerFreeLookState : PlayerBaseState
     private void OnJump()
     {
         stateMachine.SwitchState(new PlayerJumpingState(stateMachine));
+    }
+
+    private void OnDodge()
+    {
+        if(stateMachine.InputReader.MovementValue == Vector2.zero) { return; }
+
+        if(Time.time - stateMachine.PreviousDodgeTime < stateMachine.DodgeCooldown) { return; }
+        
+        stateMachine.SetDodgeTime(Time.time);
+
+        Vector3 movement = CalculateMovement();
+
+        stateMachine.SwitchState(new PlayerDodgingState(stateMachine, Vector3.up, stateMachine.RollSpeed));
     }
 }

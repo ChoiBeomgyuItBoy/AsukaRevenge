@@ -2962,9 +2962,7 @@ MonoBehaviour:
   <DodgeLength>k__BackingField: 2
   <DodgeCooldown>k__BackingField: 1
   <JumpForce>k__BackingField: 4
-  <PullUpLength>k__BackingField: 1.5
-  <PullForwardLength>k__BackingField: 5
-  <PullDuration>k__BackingField: 3.6
+  <RollSpeed>k__BackingField: 1.5
 --- !u!114 &2847056547094458395
 MonoBehaviour:
   m_ObjectHideFlags: 0

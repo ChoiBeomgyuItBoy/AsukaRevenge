@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerTargetingState : PlayerBaseState
 {
-    private const float CrossFadeDuration = 0.1f;
+    private const float CrossFadeDuration = 0.2f;
     
     private readonly int TargetingBlendTreeHash = Animator.StringToHash("TargetingBlendTree");
     private readonly int TargetingForwardHash = Animator.StringToHash("TargetingForward");

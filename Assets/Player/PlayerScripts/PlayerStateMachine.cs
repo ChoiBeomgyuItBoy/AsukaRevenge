@@ -22,11 +22,13 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float DodgeLength { get; private set; }
     [field: SerializeField] public float DodgeCooldown { get; private set; }
     [field: SerializeField] public float JumpForce { get; private set; }
-    [field: SerializeField] public float PullUpLength { get; private set; }
-    [field: SerializeField] public float PullForwardLength { get; private set; }
-    [field: SerializeField] public float PullDuration { get; private set; }
+    [field: SerializeField] public float RollSpeed { get; private set; }
 
     public Transform MainCameraTransform { get; private set; }
+
+    public float PullUpLength { get; private set; } = 1.5f;
+    public float PullForwardLength { get; private set; } = 5f;
+    public float PullDuration { get; private set; } = 3.6f;
     public float PreviousDodgeTime { get; private set; } = Mathf.NegativeInfinity;
 
      private void OnEnable()

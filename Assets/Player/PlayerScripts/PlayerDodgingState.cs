@@ -13,10 +13,13 @@ public class PlayerDodgingState : PlayerBaseState
     private Vector3 dodgingDirectionInput;
     private float remainingDodgeTime;
 
+    private float dodgeSpeed;
+
     
-    public PlayerDodgingState(PlayerStateMachine stateMachine, Vector3 dodgingDirectionInput) : base(stateMachine) 
+    public PlayerDodgingState(PlayerStateMachine stateMachine, Vector3 dodgingDirectionInput, float dodgeSpeed = 1f) : base(stateMachine) 
     { 
         this.dodgingDirectionInput = dodgingDirectionInput;
+        this.dodgeSpeed = dodgeSpeed;
     }
 
     public override void Enter()
@@ -38,7 +41,7 @@ public class PlayerDodgingState : PlayerBaseState
         movement += stateMachine.transform.right * dodgingDirectionInput.x * stateMachine.DodgeLength / stateMachine.DodgeDuration;
         movement += stateMachine.transform.forward * dodgingDirectionInput.y * stateMachine.DodgeLength / stateMachine.DodgeDuration;
 
-        Move(movement, deltaTime);
+        Move(movement * dodgeSpeed, deltaTime);
 
         FaceTarget();
 
@@ -46,7 +49,7 @@ public class PlayerDodgingState : PlayerBaseState
 
         if(remainingDodgeTime <= 0f)
         {
-            stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
+            ReturnToLocomotion();
         }
     }
 
