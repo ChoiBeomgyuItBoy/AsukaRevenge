@@ -5,7 +5,7 @@
 ![image](https://user-images.githubusercontent.com/113314204/201571156-319a8783-b82a-4123-b7da-5ecb52fd5a6f.png)
 
 ## Info:
-  - Prototype of an Action Adventure / RPG Core Combat & Movement Mechanics.
+  - Prototype of an Action Adventure / RPG - Core Combat & Movement Mechanics.
   - Implementation of State Machines From Scratch.
   - Made following the Unity 3rd Person Combat & Traversal Course from Gamdev.tv
   
